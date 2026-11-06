@@ -4,14 +4,14 @@
 
 /* ---------- Variables (les couleurs du site) ---------- */
 :root {
-  --vert: #0f766e;
-  --vert-fonce: #115e59;
-  --vert-clair: #ccfbf1;
-  --sombre: #0f172a;
-  --gris: #64748b;
-  --gris-clair: #f1f5f9;
-  --bordure: #e2e8f0;
-  --rouge: #dc2626;
+  --vert: #4f46e5;
+  --vert-fonce: #3730a3;
+  --vert-clair: #e0e7ff;
+  --sombre: #17172b;
+  --gris: #6b7280;
+  --gris-clair: #f5f6fb;
+  --bordure: #e5e7f0;
+  --rouge: #e11d48;
   --orange: #d97706;
   --blanc: #ffffff;
 }
@@ -24,10 +24,12 @@
 }
 
 body {
-  font-family: "Segoe UI", system-ui, sans-serif;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
   background: var(--gris-clair);
   color: var(--sombre);
-  line-height: 1.5;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -41,7 +43,7 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 16px 32px;
-  background: var(--sombre);
+  background: linear-gradient(110deg, #17172b, #25234a);
   color: var(--blanc);
   position: sticky;
   top: 0;
@@ -51,10 +53,11 @@ a {
 .logo {
   font-size: 1.6rem;
   font-weight: 800;
+  letter-spacing: -0.035em;
 }
 
 .logo span {
-  color: #2dd4bf;
+  color: #a5b4fc;
 }
 
 .navbar-liens {
@@ -64,7 +67,7 @@ a {
 }
 
 .navbar-liens a:hover {
-  color: #2dd4bf;
+  color: #a5b4fc;
 }
 
 .lien-panier {
@@ -84,7 +87,7 @@ a {
 
 /* ---------- Bannière ---------- */
 .banniere {
-  background: linear-gradient(135deg, var(--vert-fonce), var(--vert));
+  background: linear-gradient(135deg, #312e81 0%, #4f46e5 58%, #7c3aed 100%);
   color: var(--blanc);
   text-align: center;
   padding: 48px 20px;
@@ -115,9 +118,11 @@ a {
 .outils button {
   padding: 12px 14px;
   border: 1px solid var(--bordure);
-  border-radius: 10px;
+  border-radius: 12px;
   font-size: 1rem;
   background: var(--blanc);
+  color: var(--sombre);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .outils input {
@@ -127,10 +132,11 @@ a {
 
 .outils button {
   cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
 .outils button:hover {
-  background: var(--sombre);
+  background: #17172b;
   color: var(--blanc);
 }
 
@@ -149,17 +155,17 @@ a {
 /* ---------- Carte produit ---------- */
 .carte {
   background: var(--blanc);
-  border-radius: 14px;
+  border-radius: 18px;
   overflow: hidden;
-  border: 1px solid var(--bordure);
+  border: 1px solid rgba(229, 231, 240, 0.9);
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .carte:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(23, 23, 43, 0.12);
 }
 
 .carte img {
@@ -206,7 +212,7 @@ a {
 }
 
 .badge-rupture {
-  background: #fee2e2;
+  background: #ffe4e6;
   color: var(--rouge);
 }
 
@@ -227,7 +233,7 @@ a {
   color: var(--gris);
   padding: 48px 20px;
   background: var(--blanc);
-  border-radius: 14px;
+  border-radius: 18px;
   border: 1px dashed var(--bordure);
 }
 
@@ -258,20 +264,24 @@ a {
   display: inline-block;
   padding: 12px 20px;
   border: 1px solid transparent;
-  border-radius: 10px;
+  border-radius: 12px;
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
   text-align: center;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-principal {
-  background: var(--vert);
+  background: linear-gradient(135deg, #4f46e5, #4338ca);
   color: var(--blanc);
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.22);
 }
 
 .btn-principal:hover {
-  background: var(--vert-fonce);
+  background: #3730a3;
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.28);
+  transform: translateY(-1px);
 }
 
 .btn-secondaire {
@@ -309,7 +319,7 @@ a {
   gap: 32px;
   background: var(--blanc);
   border: 1px solid var(--bordure);
-  border-radius: 14px;
+  border-radius: 20px;
   padding: 24px;
 }
 
@@ -318,7 +328,7 @@ a {
   height: 380px;
   object-fit: contain;
   border: 1px solid var(--bordure);
-  border-radius: 14px;
+  border-radius: 18px;
   padding: 16px;
 }
 
@@ -334,7 +344,7 @@ a {
   height: 72px;
   object-fit: contain;
   border: 2px solid var(--bordure);
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 4px;
   cursor: pointer;
 }
@@ -385,7 +395,7 @@ a {
   width: 80px;
   padding: 12px;
   border: 1px solid var(--bordure);
-  border-radius: 10px;
+  border-radius: 12px;
   font-size: 1rem;
 }
 
@@ -409,7 +419,7 @@ a {
   gap: 16px;
   background: var(--blanc);
   border: 1px solid var(--bordure);
-  border-radius: 14px;
+  border-radius: 18px;
   padding: 12px 16px;
 }
 
@@ -449,14 +459,14 @@ a {
   width: 34px;
   height: 34px;
   border: 1px solid var(--bordure);
-  border-radius: 8px;
+  border-radius: 10px;
   background: var(--blanc);
   font-size: 1.1rem;
   cursor: pointer;
 }
 
 .ligne-quantite button:hover {
-  background: var(--sombre);
+  background: #17172b;
   color: var(--blanc);
 }
 
@@ -472,7 +482,7 @@ a {
 .resume-panier {
   background: var(--blanc);
   border: 1px solid var(--bordure);
-  border-radius: 14px;
+  border-radius: 18px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -504,7 +514,7 @@ a {
 .form-commande {
   background: var(--blanc);
   border: 1px solid var(--bordure);
-  border-radius: 14px;
+  border-radius: 18px;
   padding: 24px;
   display: flex;
   flex-direction: column;
@@ -527,7 +537,7 @@ a {
 .form-commande textarea {
   padding: 12px 14px;
   border: 1px solid var(--bordure);
-  border-radius: 10px;
+  border-radius: 12px;
   font: inherit;
   background: var(--blanc);
 }
@@ -558,7 +568,7 @@ a {
   grid-column: 1 / -1;
   background: var(--blanc);
   border: 1px solid var(--bordure);
-  border-radius: 14px;
+  border-radius: 18px;
   padding: 40px 24px;
   text-align: center;
   display: flex;
@@ -577,12 +587,12 @@ a {
   bottom: 24px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--sombre);
+  background: #17172b;
   color: var(--blanc);
   padding: 12px 22px;
   border-radius: 999px;
   font-weight: 600;
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.25);
+  box-shadow: 0 14px 34px rgba(23, 23, 43, 0.22);
   z-index: 20;
 }
 
@@ -609,4 +619,23 @@ a {
     min-width: 0;
     margin-left: auto;
   }
+}
+
+
+/* ---------- Finitions visuelles ---------- */
+.outils input:focus,
+.outils select:focus,
+.form-commande input:focus,
+.form-commande select:focus,
+.form-commande textarea:focus,
+.achat input:focus {
+  outline: none;
+  border-color: var(--vert);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.13);
+}
+
+.btn:active,
+.outils button:active,
+.ligne-quantite button:active {
+  transform: scale(0.98);
 }
